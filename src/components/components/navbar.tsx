@@ -51,47 +51,58 @@ export function Navbar() {
         `}
       >
         <nav className={`${isMobile ? "w-full" : "mx-auto"}`}>
-          <ul
-            className={`${
-              isMobile ? "flex flex-col space-y-4" : "flex space-x-6"
-            } text-2xl`}
-          >
-            <li
-              id="start"
-              className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
-              onClick={() => isMobile && setIsMenuOpen(false)}
-            >
-              Início
-            </li>
-            <li
-              id="services"
-              className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
-              onClick={() => isMobile && setIsMenuOpen(false)}
-            >
-              Serviços
-            </li>
-            <li
-              id="gallery"
-              className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
-              onClick={() => isMobile && setIsMenuOpen(false)}
-            >
-              Galeria
-            </li>
-            <li
-              id="testimonials"
-              className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
-              onClick={() => isMobile && setIsMenuOpen(false)}
-            >
-              Depoimentos
-            </li>
-            <li
-              id="contact"
-              className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
-              onClick={() => isMobile && setIsMenuOpen(false)}
-            >
-              Contato
-            </li>
-          </ul>
+        <ul
+  className={`${
+    isMobile ? "flex flex-col space-y-4" : "flex space-x-6"
+  } text-2xl`}
+>
+  <li
+    className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
+    onClick={() => {
+      if (isMobile) setIsMenuOpen(false);
+      document.getElementById('start')?.scrollIntoView({ behavior: 'smooth' });
+    }}
+  >
+    Início
+  </li>
+  <li
+    className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
+    onClick={() => {
+      if (isMobile) setIsMenuOpen(false);
+      document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+    }}
+  >
+    Serviços
+  </li>
+  <li
+    className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
+    onClick={() => {
+      if (isMobile) setIsMenuOpen(false);
+      document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' });
+    }}
+  >
+    Galeria
+  </li>
+  <li
+    className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
+    onClick={() => {
+      if (isMobile) setIsMenuOpen(false);
+      document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });
+    }}
+  >
+    Depoimentos
+  </li>
+  <li
+    className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
+    onClick={() => {
+      if (isMobile) setIsMenuOpen(false);
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    }}
+  >
+    Contato
+  </li>
+</ul>
+
         </nav>
 
         <Button

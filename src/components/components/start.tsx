@@ -63,6 +63,12 @@ export function Start() {
           <Button
             className="bg-pink-500 hover:bg-white text-white hover:text-pink-500 px-6 py-6 rounded-2xl shadow
             transition-all duration-300 hover:scale-105 cursor-pointer hover:shadow-lg"
+            onClick={() => {
+              const servicesSection = document.getElementById("contact");
+              if (servicesSection) {
+                servicesSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
           >
             Peça um orçamento
           </Button>
