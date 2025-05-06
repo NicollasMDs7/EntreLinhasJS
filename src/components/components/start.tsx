@@ -20,7 +20,7 @@ export function Start() {
       flex flex-col-reverse md:flex-row items-center justify-center"
     >
       <div className="w-full md:w-[60%] flex flex-col px-6 md:ml-24 mt-10 md:mt-0">
-        <p className="text-4xl md:text-6xl font-bold flex items-center flex-wrap h-24">
+        <p className="text-4xl md:text-4xl font-bold flex items-center flex-wrap h-24">
           {showFirstPart && (
             <TypeWriter
               text="Arte e precisão"
@@ -89,8 +89,8 @@ export function Start() {
           <Image
             src="/imagens/logo.jpg"
             alt="Costura artesanal de alta qualidade"
-            width={500}
-            height={500}
+            width={300}
+            height={300}
             className="rounded-full shadow w-[250px] h-[250px] md:w-[500px] md:h-[500px] object-cover
             transition-all duration-300 hover:scale-105 cursor-pointer hover:shadow-lg"
           />
