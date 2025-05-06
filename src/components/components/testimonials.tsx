@@ -1,10 +1,10 @@
-export function Services() {
+export function Testimonials() {
   return (
     <section
-      id="services"
+      id="testimonials"
       className="min-h-screen w-full py-20 flex items-center justify-center"
     >
-      <div>serviços</div>
+      <div>Depoimentos</div>
     </section>
   );
 }

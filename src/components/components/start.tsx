@@ -8,10 +8,8 @@ export function Start() {
   const [showFirstPart, setShowFirstPart] = useState(true);
   const [showSecondPart, setShowSecondPart] = useState(false);
 
-  // Reiniciar a sequência quando a segunda parte terminar
   const resetAnimation = () => {
     setShowSecondPart(false);
-    // Pequeno delay antes de reiniciar a primeira parte
     setTimeout(() => setShowFirstPart(true), 100);
   };
 

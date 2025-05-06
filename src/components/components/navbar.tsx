@@ -51,58 +51,67 @@ export function Navbar() {
         `}
       >
         <nav className={`${isMobile ? "w-full" : "mx-auto"}`}>
-        <ul
-  className={`${
-    isMobile ? "flex flex-col space-y-4" : "flex space-x-6"
-  } text-2xl`}
->
-  <li
-    className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
-    onClick={() => {
-      if (isMobile) setIsMenuOpen(false);
-      document.getElementById('start')?.scrollIntoView({ behavior: 'smooth' });
-    }}
-  >
-    Início
-  </li>
-  <li
-    className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
-    onClick={() => {
-      if (isMobile) setIsMenuOpen(false);
-      document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-    }}
-  >
-    Serviços
-  </li>
-  <li
-    className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
-    onClick={() => {
-      if (isMobile) setIsMenuOpen(false);
-      document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' });
-    }}
-  >
-    Galeria
-  </li>
-  <li
-    className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
-    onClick={() => {
-      if (isMobile) setIsMenuOpen(false);
-      document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });
-    }}
-  >
-    Depoimentos
-  </li>
-  <li
-    className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
-    onClick={() => {
-      if (isMobile) setIsMenuOpen(false);
-      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-    }}
-  >
-    Contato
-  </li>
-</ul>
-
+          <ul
+            className={`${
+              isMobile ? "flex flex-col space-y-4" : "flex space-x-6"
+            } text-2xl`}
+          >
+            <li
+              className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
+              onClick={() => {
+                if (isMobile) setIsMenuOpen(false);
+                document
+                  .getElementById("start")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Início
+            </li>
+            <li
+              className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
+              onClick={() => {
+                if (isMobile) setIsMenuOpen(false);
+                document
+                  .getElementById("services")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Serviços
+            </li>
+            <li
+              className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
+              onClick={() => {
+                if (isMobile) setIsMenuOpen(false);
+                document
+                  .getElementById("gallery")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Galeria
+            </li>
+            <li
+              className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
+              onClick={() => {
+                if (isMobile) setIsMenuOpen(false);
+                document
+                  .getElementById("testimonials")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Depoimentos
+            </li>
+            <li
+              className="underline-magical text-gray-800 hover:text-[#FF00FF] transition-colors cursor-pointer"
+              onClick={() => {
+                if (isMobile) setIsMenuOpen(false);
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Contato
+            </li>
+          </ul>
         </nav>
 
         <Button
@@ -111,7 +120,12 @@ export function Navbar() {
             transition-all duration-300 hover:scale-105 cursor-pointer hover:shadow-lg
             ${isMobile ? "w-full mt-4" : ""}
           `}
-          onClick={() => isMobile && setIsMenuOpen(false)}
+          onClick={() => {
+            const servicesSection = document.getElementById("contact");
+            if (servicesSection) {
+              servicesSection.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
         >
           Peça um orçamento
         </Button>
