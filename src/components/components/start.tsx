@@ -16,11 +16,11 @@ export function Start() {
   return (
     <section
       id="start"
-      className="min-h-screen w-full bg-gradient-to-br from-purple-300 via-pink-200 py-20
-      flex items-center justify-center"
+      className="min-h-screen mt-8 w-full bg-gradient-to-br from-purple-300 via-pink-200 py-20
+      flex flex-col-reverse md:flex-row items-center justify-center"
     >
-      <div className="w-[60%] flex flex-col ml-24">
-        <p className="text-6xl font-bold flex items-center flex-wrap h-24">
+      <div className="w-full md:w-[60%] flex flex-col px-6 md:ml-24 mt-10 md:mt-0">
+        <p className="text-4xl md:text-6xl font-bold flex items-center flex-wrap h-24">
           {showFirstPart && (
             <TypeWriter
               text="Arte e precisão"
@@ -48,7 +48,7 @@ export function Start() {
             />
           )}
         </p>
-        <div className="mt-4 text-2xl ">
+        <div className="mt-4 text-xl md:text-2xl">
           <p>
             Transformamos tecidos e ideias em peças únicas feitas especialmente
             para você.
@@ -57,7 +57,7 @@ export function Start() {
             Ajustes, consertos e criação sob medida com qualidade artesanal.
           </p>
         </div>
-        <div className="flex gap-4 mt-8">
+        <div className="flex flex-col sm:flex-row gap-4 mt-8">
           <Button
             className="bg-pink-500 hover:bg-white text-white hover:text-pink-500 px-6 py-6 rounded-2xl shadow
             transition-all duration-300 hover:scale-105 cursor-pointer hover:shadow-lg"
@@ -72,7 +72,7 @@ export function Start() {
           </Button>
           <Button
             className="text-pink-500 bg-white hover:bg-pink-600 hover:text-white px-4 py-6 rounded-2xl shadow
-  transition-all duration-300 hover:scale-105 cursor-pointer hover:shadow-lg"
+            transition-all duration-300 hover:scale-105 cursor-pointer hover:shadow-lg"
             onClick={() => {
               const servicesSection = document.getElementById("services");
               if (servicesSection) {
@@ -84,15 +84,15 @@ export function Start() {
           </Button>
         </div>
       </div>
-      <div className="w-[40%]">
+      <div className="w-full md:w-[40%] flex justify-center">
         <div className="flex">
           <Image
             src="/imagens/logo.jpg"
             alt="Costura artesanal de alta qualidade"
             width={500}
             height={500}
-            className="rounded-full  shadow
-  transition-all duration-300 hover:scale-105 cursor-pointer hover:shadow-lg"
+            className="rounded-full shadow w-[250px] h-[250px] md:w-[500px] md:h-[500px] object-cover
+            transition-all duration-300 hover:scale-105 cursor-pointer hover:shadow-lg"
           />
         </div>
       </div>
