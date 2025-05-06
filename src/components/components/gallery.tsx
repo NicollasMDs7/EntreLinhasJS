@@ -3,7 +3,7 @@
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const galleryImages = [
   {
@@ -41,6 +41,8 @@ const galleryImages = [
 export function Gallery() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
+  const [autoplayInterval, setAutoplayInterval] = useState<NodeJS.Timeout | null>(null);
+  
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
     {
       loop: true,
@@ -59,6 +61,53 @@ export function Gallery() {
     },
     []
   );
+
+  // Set up autoplay for mobile only
+  useEffect(() => {
+    // Function to check if we're on mobile
+    const isMobile = () => window.innerWidth < 768;
+    
+    // Function to start autoplay
+    const startAutoplay = () => {
+      if (isMobile() && instanceRef.current && !autoplayInterval) {
+        const interval = setInterval(() => {
+          instanceRef.current?.next();
+        }, 4000); // Change slide every 4 seconds
+        
+        setAutoplayInterval(interval);
+      }
+    };
+    
+    // Function to stop autoplay
+    const stopAutoplay = () => {
+      if (autoplayInterval) {
+        clearInterval(autoplayInterval);
+        setAutoplayInterval(null);
+      }
+    };
+    
+    // Start autoplay if on mobile and the slider is loaded
+    if (loaded) {
+      startAutoplay();
+    }
+    
+    // Handle window resize to start/stop autoplay based on screen size
+    const handleResize = () => {
+      if (isMobile()) {
+        if (!autoplayInterval) startAutoplay();
+      } else {
+        stopAutoplay();
+      }
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
+    // Clean up on component unmount
+    return () => {
+      stopAutoplay();
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [loaded]); // Remove autoplayInterval and instanceRef from dependencies
 
   return (
     <section id="gallery" className="py-16 bg-gray-50 mt-16">
