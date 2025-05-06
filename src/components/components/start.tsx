@@ -16,11 +16,11 @@ export function Start() {
   return (
     <section
       id="start"
-      className="min-h-screen mt-8 w-full bg-gradient-to-br from-purple-300 via-pink-200 py-20
-      flex flex-col-reverse md:flex-row items-center justify-center"
+      className="min-h-screen mt-8 w-full bg-gradient-to-br from-purple-300 via-pink-200 py-10 md:py-20
+      flex flex-col-reverse md:flex-row items-center justify-center px-4 md:px-8 lg:px-12"
     >
-      <div className="w-full md:w-[60%] flex flex-col px-6 md:ml-24 mt-10 md:mt-0">
-        <p className="text-4xl md:text-4xl font-bold flex items-center flex-wrap h-24">
+      <div className="w-full md:w-[55%] lg:w-[50%] flex flex-col md:pr-4 mt-10 md:mt-0">
+        <p className="text-4xl lg:text-5xl xl:text-6xl font-bold flex items-center flex-wrap h-24">
           {showFirstPart && (
             <TypeWriter
               text="Arte e precisão"
@@ -31,13 +31,11 @@ export function Start() {
               }}
             />
           )}
-
           {!showFirstPart && (
             <span className="text-pink-500 hover:text-pink-600 mr-2">
               Arte e precisão
             </span>
           )}
-
           {showSecondPart && (
             <TypeWriter
               text="em cada ponto"
@@ -48,7 +46,7 @@ export function Start() {
             />
           )}
         </p>
-        <div className="mt-4 text-xl md:text-2xl">
+        <div className="mt-4 text-base sm:text-lg md:text-xl lg:text-2xl">
           <p>
             Transformamos tecidos e ideias em peças únicas feitas especialmente
             para você.
@@ -59,8 +57,8 @@ export function Start() {
         </div>
         <div className="flex flex-col sm:flex-row gap-4 mt-8">
           <Button
-            className="bg-pink-500 hover:bg-white text-white hover:text-pink-500 px-6 py-6 rounded-2xl shadow
-            transition-all duration-300 hover:scale-105 cursor-pointer hover:shadow-lg"
+            className="bg-pink-500 hover:bg-white text-white hover:text-pink-500 px-4 sm:px-6 py-4 sm:py-6 rounded-2xl shadow
+            transition-all duration-300 hover:scale-105 cursor-pointer hover:shadow-lg text-sm sm:text-base"
             onClick={() => {
               const servicesSection = document.getElementById("contact");
               if (servicesSection) {
@@ -71,8 +69,8 @@ export function Start() {
             Peça um orçamento
           </Button>
           <Button
-            className="text-pink-500 bg-white hover:bg-pink-600 hover:text-white px-4 py-6 rounded-2xl shadow
-            transition-all duration-300 hover:scale-105 cursor-pointer hover:shadow-lg"
+            className="text-pink-500 bg-white hover:bg-pink-600 hover:text-white px-4 sm:px-6 py-4 sm:py-6 rounded-2xl shadow
+            transition-all duration-300 hover:scale-105 cursor-pointer hover:shadow-lg text-sm sm:text-base"
             onClick={() => {
               const servicesSection = document.getElementById("services");
               if (servicesSection) {
@@ -84,14 +82,15 @@ export function Start() {
           </Button>
         </div>
       </div>
-      <div className="w-full md:w-[40%] flex justify-center">
+      <div className="w-full md:w-[45%] lg:w-[50%] flex justify-center md:justify-end">
         <div className="flex">
           <Image
             src="/imagens/logo.jpg"
             alt="Costura artesanal de alta qualidade"
             width={300}
             height={300}
-            className="rounded-full shadow w-[250px] h-[250px] md:w-[500px] md:h-[500px] object-cover
+            className="rounded-full shadow w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] 
+            lg:w-[400px] lg:h-[400px] xl:w-[450px] xl:h-[450px] object-cover
             transition-all duration-300 hover:scale-105 cursor-pointer hover:shadow-lg"
           />
         </div>
