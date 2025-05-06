@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Poppins  } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/components/navbar";
+import 'keen-slider/keen-slider.min.css';
+
 
 const geistSans = Poppins({
   subsets: ["latin"],

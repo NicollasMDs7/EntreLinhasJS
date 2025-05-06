@@ -19,8 +19,8 @@ export function Start() {
       className="min-h-screen mt-8 w-full bg-gradient-to-br from-purple-300 via-pink-200 py-10 md:py-20
       flex flex-col-reverse md:flex-row items-center justify-center px-4 md:px-8 lg:px-12"
     >
-      <div className="w-full md:w-[55%] lg:w-[50%] flex flex-col md:pr-4 mt-10 md:mt-0">
-        <p className="text-4xl lg:text-5xl xl:text-6xl font-bold flex items-center flex-wrap h-24">
+      <div className="w-full md:w-[55%] lg:w-[80%] flex flex-col md:pr-4 mt-10 md:mt-0">
+        <p className="text-4xl lg:text-4xl lg:mb-6 xl:text-6xl font-bold flex items-center flex-wrap h-24">
           {showFirstPart && (
             <TypeWriter
               text="Arte e precisão"
