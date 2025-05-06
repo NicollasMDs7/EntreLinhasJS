@@ -39,7 +39,7 @@ body {
   height: 2px;
   bottom: -2px;
   left: 0;
-  background-color: #FF00FF; /* Cor magenta */
+  background-color: #FF00FF;
   transition: width 0.3s ease;
 }
 
