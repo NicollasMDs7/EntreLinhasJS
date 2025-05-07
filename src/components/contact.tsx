@@ -11,7 +11,6 @@ export function Contact() {
     telefone: "",
     mensagem: "",
   });
-
   const [enviando, setEnviando] = useState(false);
   const [mensagemStatus, setMensagemStatus] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -20,27 +19,22 @@ export function Contact() {
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
-
     if (!formData.nome.trim()) {
       newErrors.nome = "Nome é obrigatório";
     }
-
     if (!formData.email.trim()) {
       newErrors.email = "Email é obrigatório";
     } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
       newErrors.email = "Email inválido";
     }
-
     if (!formData.telefone.trim()) {
       newErrors.telefone = "Telefone é obrigatório";
     } else if (!/^\(\d{2}\) \d{5}-\d{4}$/.test(formData.telefone)) {
       newErrors.telefone = "Formato: (99) 99999-9999";
     }
-
     if (!formData.mensagem.trim()) {
       newErrors.mensagem = "Mensagem é obrigatória";
     }
-
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -49,7 +43,6 @@ export function Contact() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-
     // Formatação para telefone
     if (name === "telefone") {
       let formattedValue = value.replace(/\D/g, "");
@@ -71,7 +64,6 @@ export function Contact() {
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
     }
-
     // Limpa o erro do campo quando o usuário começa a digitar
     if (errors[name]) {
       setErrors((prev) => {
@@ -89,34 +81,52 @@ export function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     if (!validateForm()) {
       return;
     }
-
+    
     // Verifica se uma opção foi selecionada
     if (!selectedOption) {
       setRadioError("Por favor, selecione uma opção");
       return;
     }
-
+    
     setEnviando(true);
     setMensagemStatus("");
-
+    
     try {
-      // Simulando um envio bem-sucedido
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-
-      setMensagemStatus(
-        "Mensagem enviada com sucesso! Entraremos em contato em breve."
-      );
-      setFormData({ nome: "", email: "", telefone: "", mensagem: "" });
-
-      setTimeout(() => {
-        setMensagemStatus("");
-      }, 5000);
+      const response = await fetch('/api/enviar-mensagem', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          nome: formData.nome,
+          email: formData.email,
+          telefone: formData.telefone,
+          opcao: selectedOption,
+          mensagem: formData.mensagem,
+        }),
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        setMensagemStatus(
+          "Mensagem enviada com sucesso! Entraremos em contato em breve."
+        );
+        setFormData({ nome: "", email: "", telefone: "", mensagem: "" });
+        setSelectedOption(null);
+        
+        setTimeout(() => {
+          setMensagemStatus("");
+        }, 5000);
+      } else {
+        setMensagemStatus(`Erro ao enviar mensagem: ${data.erro || 'Tente novamente'}`);
+      }
     } catch (error) {
       setMensagemStatus("Erro ao enviar mensagem. Por favor, tente novamente.");
+      console.error("Erro ao enviar formulário:", error);
     } finally {
       setEnviando(false);
     }
@@ -129,7 +139,6 @@ export function Contact() {
         <p className="text-gray-600 mb-8">
           Envie sua mensagem e responderemos o mais breve possível
         </p>
-
         <div className="max-w-2xl mx-auto bg-white rounded-xl p-6 shadow-md">
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
@@ -156,7 +165,6 @@ export function Contact() {
                 </p>
               )}
             </div>
-
             <div className="mb-4">
               <label
                 htmlFor="email"
@@ -181,7 +189,6 @@ export function Contact() {
                 </p>
               )}
             </div>
-
             <div className="mb-4">
               <label
                 htmlFor="telefone"
@@ -210,7 +217,6 @@ export function Contact() {
               <label className="block text-left text-gray-700 mb-2 font-medium">
                 Selecione uma opção:
               </label>
-
               <RadioGroup
                 value={selectedOption || ""}
                 onValueChange={handleRadioChange}
@@ -226,7 +232,6 @@ export function Contact() {
                     Ajustes
                   </Label>
                 </div>
-
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem
                     value="reformas"
@@ -237,7 +242,6 @@ export function Contact() {
                     Reformas
                   </Label>
                 </div>
-
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem
                     value="personalizados"
@@ -248,7 +252,6 @@ export function Contact() {
                     Personalizados
                   </Label>
                 </div>
-
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem
                     value="outros"
@@ -260,14 +263,12 @@ export function Contact() {
                   </Label>
                 </div>
               </RadioGroup>
-
               {radioError && (
                 <p className="text-red-500 text-sm mt-1 text-left">
                   {radioError}
                 </p>
               )}
             </div>
-
             <div className="mb-6">
               <label
                 htmlFor="mensagem"
@@ -292,7 +293,6 @@ export function Contact() {
                 </p>
               )}
             </div>
-
             <button
               type="submit"
               disabled={enviando}
@@ -302,7 +302,6 @@ export function Contact() {
             >
               {enviando ? "Enviando..." : "Enviar Mensagem"}
             </button>
-
             {mensagemStatus && (
               <div
                 className={`mt-4 p-3 rounded-lg ${
