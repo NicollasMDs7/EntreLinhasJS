@@ -1,11 +1,13 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram } from "lucide-react";
+import Link from "next/link";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const whatsappLink = "https://wa.me/5500000000000"; // Replace with your actual WhatsApp number
 
   useEffect(() => {
     const checkIfMobile = () => {
@@ -113,6 +115,30 @@ export function Navbar() {
             </li>
           </ul>
         </nav>
+
+        {isMobile && (
+          <div className="flex space-x-4 mb-4 justify-center mt-4">
+            <Link
+              href="https://www.instagram.com/entrelinhasjs?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              className="text-gray-600 hover:text-pink-500 transition-colors hover:scale-110 duration-300"
+            >
+              <Instagram size={24} strokeWidth={2} />
+            </Link>
+            <Link
+              href={whatsappLink}
+              target="_blank"
+              className="transition-transform hover:scale-110 duration-300 hover:bg-green-500"
+            >
+              <img
+                src="https://img.icons8.com/ios/50/whatsapp--v1.png"
+                alt="WhatsApp"
+                width={24}
+                height={24}
+              />
+            </Link>
+          </div>
+        )}
 
         <Button
           className={`
