@@ -58,6 +58,7 @@ export function Gallery() {
       created() {
         setLoaded(true);
       },
+      duration: 1500, // Adiciona uma duração maior para a transição
     },
     []
   );

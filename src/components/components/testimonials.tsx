@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 const testimonials = [
   {
-    name: "Aline Fregonese",
+    name: "Bruna Guimarães",
     role: "Cliente desde 2020",
     content:
       "Fiquei impressionada com a qualidade do serviço. Minhas roupas ficaram perfeitas e o atendimento foi excelente. Recomendo a todos!",
@@ -16,7 +16,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    name: "Bruna Guimarães",
+    name: "Aline Fregonese",
     role: "Cliente desde 2021",
     content:
       "Precisava de ajustes urgentes em um fantasia para o carnaval e a Entre Linhas me salvou! Entrega rápida e trabalho impecável.",
