@@ -58,7 +58,7 @@ export function Services() {
       className="py-16 bg-white flex justify-center items-center h-screen"
     >
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-2">Nossos Serviços</h2>
+        <h2 className="text-3xl font-bold mb-2 text-black">Nossos Serviços</h2>
         <p className="text-gray-600 mb-24">
           Oferecemos uma variedade de soluções em costura para atender todas as
           suas necessidades

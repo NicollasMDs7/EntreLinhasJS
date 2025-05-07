@@ -125,7 +125,7 @@ export function Contact() {
   return (
     <section id="contact" className="py-16 bg-gray-50 mt-16">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-2">Realize seu Orçamento</h2>
+        <h2 className="text-3xl font-bold mb-2 text-black">Realize seu Orçamento</h2>
         <p className="text-gray-600 mb-8">
           Envie sua mensagem e responderemos o mais breve possível
         </p>

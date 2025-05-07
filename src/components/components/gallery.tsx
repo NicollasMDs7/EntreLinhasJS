@@ -112,7 +112,7 @@ export function Gallery() {
   return (
     <section id="gallery" className="py-16 bg-gray-50 mt-16">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-2">Nossa Galeria</h2>
+        <h2 className="text-3xl font-bold mb-2 text-black">Nossa Galeria</h2>
         <p className="text-gray-600 mb-8">
           Confira alguns dos nossos trabalhos recentes
         </p>

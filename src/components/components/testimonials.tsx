@@ -98,7 +98,7 @@ export function Testimonials() {
     <section id="testimonials" className="py-20 bg-white w-full">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-2">
+          <h2 className="text-3xl font-bold mb-2 text-black">
             O Que Nossos Clientes Dizem
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
