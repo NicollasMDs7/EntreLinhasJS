@@ -11,7 +11,8 @@ const testimonials = [
     name: "Bruna Guimarães",
     role: "Cliente desde 2020",
     content:
-      "Fiquei impressionada com a qualidade do serviço. Minhas roupas ficaram perfeitas e o atendimento foi excelente. Recomendo a todos!",
+    "Precisava de ajustes urgentes em um fantasia para o carnaval e a Entre Linhas me salvou! Entrega rápida e trabalho impecável."
+      ,
     avatar: "/imagens/feedback-1.jpg", // Substitua pelo caminho correto da imagem
     rating: 5,
   },
@@ -19,7 +20,7 @@ const testimonials = [
     name: "Aline Fregonese",
     role: "Cliente desde 2021",
     content:
-      "Precisava de ajustes urgentes em um fantasia para o carnaval e a Entre Linhas me salvou! Entrega rápida e trabalho impecável.",
+      "Fiquei impressionada com a qualidade do serviço. Minhas roupas ficaram perfeitas e o atendimento foi excelente. Recomendo a todos!",
     avatar: "/imagens/feedback-2.jpg", // Substitua pelo caminho correto da imagem
     rating: 5,
   },
@@ -27,7 +28,7 @@ const testimonials = [
     name: "Maria Silva",
     role: "Cliente desde 2018",
     content:
-      "Satisfeita desde sempre, já precise diversas vezes de seus serviços e sempre fui muito bem atendida. Recomendo a todos!",
+      "Satisfeita desde sempre, já precisei diversas vezes de seus serviços e sempre fui muito bem atendida. Recomendo a todos!",
     avatar: "/imagens/feedback-3.jpg", // Substitua pelo caminho correto da imagem
     rating: 5,
   },
