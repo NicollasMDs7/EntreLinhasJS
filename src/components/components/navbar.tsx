@@ -7,7 +7,13 @@ import Link from "next/link";
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const whatsappLink = "https://wa.me/5500000000000"; // Replace with your actual WhatsApp number
+  
+    // Número de WhatsApp formatado e mensagem codificada para URL
+    const whatsappNumber = "5511988386274";
+    const whatsappMessage = encodeURIComponent(
+      "Olá, vim pelo site. Gostaria de saber mais sobre os serviços de costura."
+    );
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   useEffect(() => {
     const checkIfMobile = () => {
