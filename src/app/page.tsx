@@ -1,9 +1,9 @@
-import { Contact } from "@/components/components/contact";
-import { Footer } from "@/components/components/footer";
-import { Gallery } from "@/components/components/gallery";
-import { Services } from "@/components/components/services";
-import { Start } from "@/components/components/start";
-import { Testimonials } from "@/components/components/testimonials";
+import { Contact } from "@/components/contact";
+import { Footer } from "@/components/footer";
+import { Gallery } from "@/components/gallery";
+import { Services } from "@/components/services";
+import { Start } from "@/components/start";
+import { Testimonials } from "@/components/testimonials";
 
 export default function Home() {
   return (
@@ -17,4 +17,3 @@ export default function Home() {
     </main>
   );
 }
-

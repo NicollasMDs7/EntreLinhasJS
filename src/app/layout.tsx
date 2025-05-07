@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Poppins  } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/components/navbar";
-import 'keen-slider/keen-slider.min.css';
-
+import { Navbar } from "@/components/navbar";
+import "keen-slider/keen-slider.min.css";
 
 const geistSans = Poppins({
   subsets: ["latin"],
@@ -23,9 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body
-       className={geistSans.className}
-      >
+      <body className={geistSans.className}>
         <Navbar />
         {children}
       </body>
