@@ -58,7 +58,6 @@ export function Gallery() {
       created() {
         setLoaded(true);
       },
-      duration: 1500, // Adiciona uma duração maior para a transição
     },
     []
   );
@@ -73,7 +72,7 @@ export function Gallery() {
       if (isMobile() && instanceRef.current && !autoplayInterval) {
         const interval = setInterval(() => {
           instanceRef.current?.next();
-        }, 4000); // Change slide every 4 seconds
+        }, 8000); // Change slide every 4 seconds
         
         setAutoplayInterval(interval);
       }
