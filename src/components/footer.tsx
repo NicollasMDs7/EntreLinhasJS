@@ -108,7 +108,7 @@ export function Footer() {
             />{" "}
             por
             <Link
-              href="https://www.linkedin.com/in/nicollas-mendes-dias-871357303/"
+              href="https://nicollas-dev.vercel.app/"
               target="_blank"
               className="text-pink-500 hover:text-pink-600 ml-1 transition-colors hover:scale-105 duration-300"
             >
