@@ -69,27 +69,18 @@ export async function sendEmail(mensagemData: MensagemData) {
   const clientMailOptions = {
     from: `"EntreLinhasJS" <${process.env.EMAIL_USER}>`,
     to: email,
-    subject: `Obrigado pelo contato, ${nome}! Aqui está seu cupom de desconto`,
+    subject: `Obrigado pelo contato, ${nome}!`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 5px;">
         <h1 style="color: #333; border-bottom: 1px solid #eee; padding-bottom: 10px;">EntreLinhasJS</h1>
         
         <div style="margin: 20px 0;">
           <p style="margin: 10px 0;">Olá <strong>${nome}</strong>,</p>
-          <p style="margin: 10px 0;">Obrigado por entrar em contato conosco! Recebemos sua mensagem e retornaremos em breve.</p>
+          <p style="margin: 10px 0;">Obrigado pelo contato. Assim que possível já iremos entrar em contato.</p>
           
-          <div style="margin: 30px 0; text-align: center; background-color: #f9f9f9; padding: 20px; border-radius: 8px;">
-            <h2 style="color: #FF00FF; margin-bottom: 15px;">Você acaba de ganhar um cupom de 15% de desconto!</h2>
-            <div style="background-color: #FF00FF; color: white; font-weight: bold; padding: 15px; border-radius: 5px; font-size: 20px; letter-spacing: 2px;">
-              ENTRELINHAS15
-            </div>
-            <p style="margin-top: 15px; font-size: 14px;">Use este código na sua próxima compra em nossa loja.</p>
-            <p style="margin-top: 15px; font-size: 14px;">Entre em contato no nosso Whatsaap: ${whatsappLink}</p>
-          </div>
-          
-          <p style="margin: 20px 0;">Estamos ansiosos para atendê-lo!</p>
-          <p style="margin: 10px 0;">Atenciosamente,</p>
+          <p style="margin: 20px 0;">Atenciosamente,</p>
           <p style="margin: 10px 0;"><strong>Equipe EntreLinhasJS</strong></p>
+          <p style="margin-top: 15px; font-size: 14px;">Entre em contato no nosso Whatsaap: ${whatsappLink}</p>
         </div>
         
         <div style="margin-top: 30px; font-size: 12px; color: #777; border-top: 1px solid #eee; padding-top: 10px; text-align: center;">
@@ -99,6 +90,7 @@ export async function sendEmail(mensagemData: MensagemData) {
       </div>
     `,
   };
+
 
   try {
     // Enviar email para o administrador
